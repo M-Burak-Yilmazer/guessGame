@@ -8,7 +8,6 @@ let skor = 10;
 let enYuksekSkor = localStorage.getItem("top-score") || 0;
 document.querySelector(".top-score").textContent = enYuksekSkor;
 
-
 //skoru index.html den cekilebilirdi ancak çok kullanılacağı için bu daha tercih edilen bir yol oldu.
 
 //! her check butonuna basıldığında yapılacaklar
@@ -56,7 +55,9 @@ document.querySelector(".again").onclick = () => {
   document.querySelector(".score").textContent = skor;
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
+  document.querySelector(".guess").disabled = "";
   message.textContent = "Oyun yeni oyuncu için başliyor";
+   document.querySelector(".guess").focus()
 };
 
 //! enter keydown
