@@ -5,9 +5,11 @@ console.log(rastgeleSayi);
 let message = document.querySelector(".msg");
 
 let skor = 10;
-//skoru index.html den cekilebilirdi ancak çok kullanılacağı için bu daha tercih edilen bir yol oldu.
+let enYuksekSkor = localStorage.getItem("top-score") || 0;
+document.querySelector(".top-score").textContent = enYuksekSkor;
 
-let enYuksekSkor = 0;
+
+//skoru index.html den cekilebilirdi ancak çok kullanılacağı için bu daha tercih edilen bir yol oldu.
 
 //! her check butonuna basıldığında yapılacaklar
 
@@ -22,6 +24,7 @@ document.querySelector(".check").addEventListener("click", (e) => {
     //*top score kontrolü
 
     if (skor > enYuksekSkor) {
+      localStorage.setItem("top-score", skor);
       enYuksekSkor = skor;
       document.querySelector(".top-score").textContent = enYuksekSkor;
     }
