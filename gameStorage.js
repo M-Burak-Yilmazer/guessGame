@@ -21,6 +21,7 @@ document.querySelector(".check").addEventListener("click", (e) => {
     message.textContent = "Tebrikler Bildiniz 👏";
     document.body.style.backgroundColor = "green";
     document.querySelector(".number").textContent = tahmin;
+    document.querySelector(".guess").disabled = "true";
     //*top score kontrolü
 
     if (skor > enYuksekSkor) {
