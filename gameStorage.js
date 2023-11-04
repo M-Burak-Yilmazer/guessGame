@@ -57,12 +57,26 @@ document.querySelector(".again").onclick = () => {
   document.querySelector(".guess").value = "";
   document.querySelector(".guess").disabled = "";
   message.textContent = "Oyun yeni oyuncu için başliyor";
-   document.querySelector(".guess").focus()
+  document.querySelector(".guess").focus();
 };
 
 //! enter keydown
 document.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
     document.querySelector(".check").click();
+  }
+});
+//! Geçersiz sayı girdiniz  1 ile 20 arasında bir sayı girin"
+document.querySelector(".check").addEventListener("click", () => {
+  let tahmin = document.querySelector(".guess").value;
+
+  const tahminSayi = parseInt(tahmin);
+
+  if (tahminSayi >= 1 && tahminSayi <= 20 && !isNaN(tahminSayi)) {
+    //Doğru sayı girilmişse onu devam ettir
+  } else {
+    message.textContent =
+      "Geçersiz sayı girdiniz (1 ile 20 arasında bir sayı girin) ";
+    skor++;
   }
 });
